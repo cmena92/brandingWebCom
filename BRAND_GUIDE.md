@@ -44,16 +44,34 @@ Una marca que vende **claridad** no puede hablar enredado. El texto de cualquier
 | Negro | `assets/logos/wccr-logo-negro.png` | Monocromático, documentos B/N |
 | Naranja | `assets/logos/wccr-logo-naranja.png` | Variante (en revisión) |
 
-## Colores — v0.1 PROVISIONAL
+## Sistema visual — v1.0 · "Sala de Control"
 
-> La identidad visual definitiva está **pendiente**. Estos valores salen del logo y sirven de arranque. Tokens consumibles en [`tokens/`](tokens/).
+> Dirección: **instrumento / panel de seguridad**. Dark-first, alto contraste, el rojo como **alerta de exposición** (no como decoración). Vista en vivo: [`preview.html`](preview.html). Tokens consumibles en [`tokens/`](tokens/).
 
-| Nombre | Hex | RGB | Token |
+**Cada color es un ROL, no un gusto:**
+
+| Rol | Hex | Token | Uso |
 |---|---|---|---|
-| Rojo WebCom | `#E30613` | rgb(227, 6, 19) | `--wccr-rojo` |
-| Azul marino | `#20217A` | rgb(32, 33, 122) | `--wccr-azul` |
-| Blanco | `#FFFFFF` | — | `--wccr-blanco` |
-| Negro | `#111111` | — | `--wccr-negro` |
+| Azul · autoridad | `#20217A` | `--wccr-azul` | Base de marca, confianza |
+| Azul · acción | `#4D5BFF` | `--wccr-primary` | Botones, links (interactivo) |
+| Rojo · exposición | `#E30613` | `--wccr-danger` | Alerta, riesgo, "estás expuesto" |
+| Ámbar · atención | `#FFB020` | `--wccr-warning` | Puntos ciegos, advertencias |
+| Verde · en control | `#2BD9A8` | `--wccr-ok` | Éxito, seguro |
+| Lienzo | `#0B0D1A` | `--wccr-bg` | Fondo base (oscuro) |
+| Panel | `#14172E` | `--wccr-surface` | Tarjetas, paneles |
+| Texto | `#EAECF5` | `--wccr-text` | Texto principal sobre oscuro |
+
+> Los tres semánticos (rojo / ámbar / verde) mapean exactamente a los niveles del [Test de Exposición](docs/test-exposicion.md): *A ciegas / Con puntos ciegos / En control*.
+
+## Tipografía
+
+| Rol | Fuente | Token | Por qué |
+|---|---|---|---|
+| Títulos | **Space Grotesk** | `--wccr-font-display` | Técnica, con carácter, precisa |
+| Cuerpo / UI | **Inter** | `--wccr-font-body` | Legibilidad workhorse |
+| Datos / métricas | **JetBrains Mono** | `--wccr-font-mono` | La "lectura del instrumento" |
+
+Todas libres (Google Fonts). El **mono en los datos** es lo que hace que se sienta un tablero de verdad — usalo para puntajes, métricas y estados.
 
 **Consumir desde un producto:**
 
@@ -82,4 +100,5 @@ module.exports = { theme: { extend: { colors: wccr.colors } } };
 
 ---
 
-> **Pendiente (fase de identidad visual):** decisión final de paleta y mapeo semántico, tipografía, versiones SVG del logo, favicon/iconos de app, plantillas.
+> **Hecho:** dirección visual, paleta con roles, mapeo semántico, tipografía.
+> **Pendiente:** versiones SVG del logo, favicon/iconos de app, plantillas, y aplicar el sistema al sitio web.

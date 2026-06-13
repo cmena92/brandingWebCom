@@ -1,19 +1,40 @@
 {
-  "$comment": "WebCom Costa Rica — design tokens (colores). v0.1 PROVISIONAL, extraídos del logo. Consumible por cualquier producto (web, app, Figma, scripts).",
-  "version": "0.1.0",
-  "status": "provisional",
+  "$comment": "WebCom Costa Rica — design tokens. v1.0 sistema visual 'Sala de Control' (dark-first). Consumible por web, app, Figma, scripts.",
+  "version": "1.0.0",
+  "status": "aprobado",
+  "direction": "instrumento / panel de seguridad — dark-first, alto contraste, rojo = exposición",
   "brand": {
-    "rojo": { "hex": "#E30613", "rgb": [227, 6, 19] },
-    "azul": { "hex": "#20217A", "rgb": [32, 33, 122] }
+    "azul":        { "hex": "#20217A", "rol": "autoridad / base" },
+    "rojo":        { "hex": "#E30613", "rol": "exposición / alerta" },
+    "azul-bright": { "hex": "#4D5BFF", "rol": "acción interactiva (derivado)" },
+    "azul-soft":   { "hex": "#2A2D5C" }
   },
-  "neutral": {
-    "blanco":      { "hex": "#FFFFFF" },
-    "negro":       { "hex": "#111111" },
-    "gris-oscuro": { "hex": "#2B2B33" },
-    "gris":        { "hex": "#6B6F76" },
-    "gris-claro":  { "hex": "#C9CBCF" }
+  "surface": {
+    "bg":        { "hex": "#0B0D1A" },
+    "surface":   { "hex": "#14172E" },
+    "surface-2": { "hex": "#1E2240" },
+    "border":    { "rgba": "rgba(255,255,255,0.08)" }
+  },
+  "text": {
+    "text":  { "hex": "#EAECF5" },
+    "muted": { "hex": "#9AA0BE" },
+    "faint": { "hex": "#5B6080" }
   },
   "semantic": {
-    "$note": "Mapeo semántico (primary/danger/success...) PENDIENTE — se define en la fase de identidad visual."
+    "danger":  { "hex": "#E30613", "nivel": "A ciegas / expuesto" },
+    "warning": { "hex": "#FFB020", "nivel": "Con puntos ciegos" },
+    "ok":      { "hex": "#2BD9A8", "nivel": "En control" },
+    "primary": { "ref": "brand.azul-bright" }
+  },
+  "neutral-light": {
+    "blanco":      { "hex": "#FFFFFF" },
+    "gris-claro":  { "hex": "#C9CBCF" },
+    "gris":        { "hex": "#6B6F76" },
+    "gris-oscuro": { "hex": "#2B2B33" }
+  },
+  "typography": {
+    "display": "Space Grotesk",
+    "body": "Inter",
+    "mono": "JetBrains Mono"
   }
 }

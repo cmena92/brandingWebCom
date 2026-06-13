@@ -1,24 +1,44 @@
-/* WebCom Costa Rica — Design Tokens (colores)
- * v0.1 PROVISIONAL — extraídos del logo. La identidad visual definitiva
- * aún no está decidida. Cuando se cierre, se actualiza acá y todos los
- * productos que importen este archivo se actualizan solos.
+/* WebCom Costa Rica — Design Tokens (sistema visual "Sala de Control")
+ * v1.0 — identidad visual aprobada (dirección: instrumento / panel de seguridad).
+ * Dark-first: la marca vive sobre fondos oscuros, alto contraste, el rojo como alerta.
  *
- * Uso:  @import url('.../tokens/colors.css');  -> usar var(--wccr-rojo)
+ * Uso:  @import url('.../tokens/colors.css');  ->  var(--wccr-azul), var(--wccr-danger), ...
  */
 
 :root {
-  /* Colores de marca (del logo) */
-  --wccr-rojo:  #E30613;   /* rgb(227, 6, 19)  */
-  --wccr-azul:  #20217A;   /* rgb(32, 33, 122) */
+  /* --- Marca --- */
+  --wccr-azul:        #20217A;  /* azul marino de marca (autoridad, base)        */
+  --wccr-rojo:        #E30613;  /* rojo de marca = EXPOSICIÓN / alerta            */
 
-  /* Neutros */
+  /* Azul interactivo (derivado, más brillante para botones/links sobre oscuro) */
+  --wccr-azul-bright: #4D5BFF;
+  --wccr-azul-soft:   #2A2D5C;
+
+  /* --- Superficies (panel de control, por capas) --- */
+  --wccr-bg:          #0B0D1A;  /* lienzo base (casi negro azulado)               */
+  --wccr-surface:     #14172E;  /* panel                                          */
+  --wccr-surface-2:   #1E2240;  /* panel elevado                                  */
+  --wccr-border:      rgba(255, 255, 255, 0.08);
+
+  /* --- Texto --- */
+  --wccr-text:        #EAECF5;  /* texto principal                                */
+  --wccr-text-muted:  #9AA0BE;  /* texto secundario                               */
+  --wccr-text-faint:  #5B6080;  /* deshabilitado / sutil                          */
+
+  /* --- Semántica: niveles de exposición (mapean al Test) --- */
+  --wccr-danger:      #E30613;  /* "A ciegas" / expuesto / error                  */
+  --wccr-warning:     #FFB020;  /* "Con puntos ciegos" / atención                 */
+  --wccr-ok:          #2BD9A8;  /* "En control" / éxito                           */
+  --wccr-primary:     var(--wccr-azul-bright);  /* acción interactiva             */
+
+  /* --- Neutros claros (para piezas sobre fondo claro: docs, impresión) --- */
   --wccr-blanco:      #FFFFFF;
-  --wccr-negro:       #111111;
-  --wccr-gris-oscuro: #2B2B33;
-  --wccr-gris:        #6B6F76;
   --wccr-gris-claro:  #C9CBCF;
+  --wccr-gris:        #6B6F76;
+  --wccr-gris-oscuro: #2B2B33;
 
-  /* NOTA: el mapeo semántico (primary/danger/etc.) queda PENDIENTE.
-   * El rojo como color primario de UI choca con los estados de error;
-   * esa decisión es parte de la fase de identidad visual. */
+  /* --- Tipografía --- */
+  --wccr-font-display: 'Space Grotesk', system-ui, sans-serif;  /* títulos      */
+  --wccr-font-body:    'Inter', system-ui, sans-serif;          /* cuerpo / UI  */
+  --wccr-font-mono:    'JetBrains Mono', ui-monospace, monospace;/* datos        */
 }
