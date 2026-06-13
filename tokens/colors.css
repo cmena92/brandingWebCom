@@ -1,0 +1,24 @@
+/* WebCom Costa Rica — Design Tokens (colores)
+ * v0.1 PROVISIONAL — extraídos del logo. La identidad visual definitiva
+ * aún no está decidida. Cuando se cierre, se actualiza acá y todos los
+ * productos que importen este archivo se actualizan solos.
+ *
+ * Uso:  @import url('.../tokens/colors.css');  -> usar var(--wccr-rojo)
+ */
+
+:root {
+  /* Colores de marca (del logo) */
+  --wccr-rojo:  #E30613;   /* rgb(227, 6, 19)  */
+  --wccr-azul:  #20217A;   /* rgb(32, 33, 122) */
+
+  /* Neutros */
+  --wccr-blanco:      #FFFFFF;
+  --wccr-negro:       #111111;
+  --wccr-gris-oscuro: #2B2B33;
+  --wccr-gris:        #6B6F76;
+  --wccr-gris-claro:  #C9CBCF;
+
+  /* NOTA: el mapeo semántico (primary/danger/etc.) queda PENDIENTE.
+   * El rojo como color primario de UI choca con los estados de error;
+   * esa decisión es parte de la fase de identidad visual. */
+}

@@ -1,0 +1,19 @@
+{
+  "$comment": "WebCom Costa Rica — design tokens (colores). v0.1 PROVISIONAL, extraídos del logo. Consumible por cualquier producto (web, app, Figma, scripts).",
+  "version": "0.1.0",
+  "status": "provisional",
+  "brand": {
+    "rojo": { "hex": "#E30613", "rgb": [227, 6, 19] },
+    "azul": { "hex": "#20217A", "rgb": [32, 33, 122] }
+  },
+  "neutral": {
+    "blanco":      { "hex": "#FFFFFF" },
+    "negro":       { "hex": "#111111" },
+    "gris-oscuro": { "hex": "#2B2B33" },
+    "gris":        { "hex": "#6B6F76" },
+    "gris-claro":  { "hex": "#C9CBCF" }
+  },
+  "semantic": {
+    "$note": "Mapeo semántico (primary/danger/success...) PENDIENTE — se define en la fase de identidad visual."
+  }
+}
