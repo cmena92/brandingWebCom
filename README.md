@@ -26,8 +26,10 @@ Fuente de verdad de la marca **WebCom Costa Rica (WCCR)**. Todo producto, web o 
 │   ├── colors.css              Variables CSS    (consumible)
 │   ├── colors.json             Design tokens    (consumible)
 │   └── tailwind.tokens.js      Tokens Tailwind  (consumible)
-└── docs/origen/                Material de origen (PDF de la empresa)
+└── docs/                       Activación: playbook, mensajería, test
 ```
+
+> Material de origen confidencial (FODA, datos internos) se mantiene **fuera** de este repo público a propósito.
 
 ## Estado
 
