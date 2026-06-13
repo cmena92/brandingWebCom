@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WebCom — Sistema Visual (Sala de Control)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul:#20217A; --rojo:#E30613; --azul-bright:#4D5BFF; --azul-soft:#2A2D5C;
+    --bg:#0B0D1A; --surface:#14172E; --surface-2:#1E2240; --border:rgba(255,255,255,.08);
+    --text:#EAECF5; --muted:#9AA0BE; --faint:#5B6080;
+    --danger:#E30613; --warning:#FFB020; --ok:#2BD9A8;
+    --display:'Space Grotesk',sans-serif; --body:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.55;
+    background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.04) 1px, transparent 0);
+    background-size:32px 32px;}
+  .wrap{max-width:1080px;margin:0 auto;padding:32px 24px 80px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--border)}
+  header img{height:34px}
+  header .tag{font-family:var(--mono);font-size:12px;color:var(--muted);letter-spacing:.05em}
+  h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.01em}
+  h1{font-size:44px;line-height:1.1;margin:8px 0}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.18em;color:var(--muted);margin:48px 0 16px;font-weight:600}
+  .lead{color:var(--muted);font-size:18px;max-width:60ch}
+  .mono{font-family:var(--mono)}
+  /* hero meter */
+  .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center;
+    background:linear-gradient(180deg,var(--surface),var(--surface-2));border:1px solid var(--border);
+    border-radius:16px;padding:36px;margin-top:28px}
+  .kicker{font-family:var(--mono);color:var(--rojo);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+  .meter{background:#070912;border:1px solid var(--border);border-radius:14px;padding:24px;text-align:center}
+  .meter .label{font-family:var(--mono);font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+  .meter .score{font-family:var(--mono);font-weight:600;font-size:64px;color:var(--danger);line-height:1;margin:8px 0}
+  .bar{height:10px;border-radius:6px;background:var(--surface-2);overflow:hidden;margin:14px 0 6px}
+  .bar > span{display:block;height:100%;width:42%;background:linear-gradient(90deg,var(--danger),var(--warning))}
+  .meter .verdict{font-family:var(--mono);font-size:13px;color:var(--danger)}
+  /* buttons */
+  .btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:15px;border-radius:10px;
+    padding:13px 22px;border:1px solid transparent;cursor:pointer;text-decoration:none}
+  .btn-primary{background:var(--azul-bright);color:#fff}
+  .btn-ghost{background:transparent;border-color:var(--border);color:var(--text);margin-left:8px}
+  .btn-danger{background:var(--rojo);color:#fff}
+  /* palette */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .sw{border:1px solid var(--border);border-radius:12px;overflow:hidden;background:var(--surface)}
+  .sw .chip{height:72px}
+  .sw .meta{padding:10px 12px;font-family:var(--mono);font-size:12px}
+  .sw .meta b{font-family:var(--body);display:block;font-size:13px;margin-bottom:2px}
+  .sw .meta span{color:var(--muted)}
+  /* type */
+  .type{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px}
+  .type .row{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid var(--border)}
+  .type .row:last-child{border-bottom:0}
+  .type .row .name{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  /* tiers */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .tier{background:var(--surface);border:1px solid var(--border);border-top:3px solid;border-radius:12px;padding:20px}
+  .tier h3{font-size:18px;margin-bottom:6px}
+  .tier .pts{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  .tier p{font-size:14px;color:var(--muted);margin-top:10px}
+  .t-red{border-top-color:var(--danger)} .t-red h3{color:var(--danger)}
+  .t-amber{border-top-color:var(--warning)} .t-amber h3{color:var(--warning)}
+  .t-green{border-top-color:var(--ok)} .t-green h3{color:var(--ok)}
+  footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--border);font-family:var(--mono);font-size:12px;color:var(--faint)}
+  @media(max-width:760px){.hero,.tiers{grid-template-columns:1fr}h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <img src="assets/logos/wccr-logo-blanco.png" alt="WebCom">
+    <span class="tag">SISTEMA VISUAL · v1.0 · SALA DE CONTROL</span>
+  </header>
+
+  <!-- HERO: el producto hecho marca -->
+  <section class="hero">
+    <div>
+      <span class="kicker">// EXPOSICIÓN DETECTADA</span>
+      <h1>Director, ¿sabés de verdad qué tan expuesto estás?</h1>
+      <p class="lead">Entre tantos EDR, siglas y proveedores, perdiste la respuesta más importante. Te la devolvemos: medida, en claro, sin humo.</p>
+      <div style="margin-top:22px">
+        <a class="btn btn-danger" href="#">Medí tu exposición en 60s →</a>
+        <a class="btn btn-ghost" href="#">Cómo trabajamos</a>
+      </div>
+    </div>
+    <div class="meter">
+      <div class="label">Nivel de exposición</div>
+      <div class="score">58<span style="font-size:24px">%</span></div>
+      <div class="bar"><span></span></div>
+      <div class="verdict">▲ A CIEGAS — acción requerida</div>
+    </div>
+  </section>
+
+  <!-- PALETA -->
+  <h2>Paleta · roles, no decoración</h2>
+  <div class="grid">
+    <div class="sw"><div class="chip" style="background:#0B0D1A"></div><div class="meta"><b>Lienzo</b><span>#0B0D1A</span></div></div>
+    <div class="sw"><div class="chip" style="background:#14172E"></div><div class="meta"><b>Panel</b><span>#14172E</span></div></div>
+    <div class="sw"><div class="chip" style="background:#20217A"></div><div class="meta"><b>Azul · autoridad</b><span>#20217A</span></div></div>
+    <div class="sw"><div class="chip" style="background:#4D5BFF"></div><div class="meta"><b>Azul · acción</b><span>#4D5BFF</span></div></div>
+    <div class="sw"><div class="chip" style="background:#E30613"></div><div class="meta"><b>Rojo · exposición</b><span>#E30613</span></div></div>
+    <div class="sw"><div class="chip" style="background:#FFB020"></div><div class="meta"><b>Ámbar · atención</b><span>#FFB020</span></div></div>
+    <div class="sw"><div class="chip" style="background:#2BD9A8"></div><div class="meta"><b>Verde · en control</b><span>#2BD9A8</span></div></div>
+    <div class="sw"><div class="chip" style="background:#EAECF5"></div><div class="meta"><b>Texto</b><span>#EAECF5</span></div></div>
+  </div>
+
+  <!-- TIPOGRAFÍA -->
+  <h2>Tipografía · el instrumento</h2>
+  <div class="type">
+    <div class="row"><span style="font-family:var(--display);font-size:30px;font-weight:700">Se acabaron las cajas negras</span><span class="name">Space Grotesk · títulos</span></div>
+    <div class="row"><span style="font-family:var(--body);font-size:17px">Te lo explicamos como un colega que ya estuvo en la trinchera.</span><span class="name">Inter · cuerpo</span></div>
+    <div class="row"><span class="mono" style="font-size:17px;color:var(--ok)">scan_complete: 8 dominios · 3 expuestos</span><span class="name">JetBrains Mono · datos</span></div>
+  </div>
+
+  <!-- NIVELES DEL TEST -->
+  <h2>Niveles del Test de Exposición</h2>
+  <div class="tiers">
+    <div class="tier t-red"><h3>A ciegas</h3><span class="pts mono">0–6 pts</span><p>Estás manejando en la niebla. Lo que no se mide, no se arregla — y acabás de empezar a medir.</p></div>
+    <div class="tier t-amber"><h3>Con puntos ciegos</h3><span class="pts mono">7–11 pts</span><p>Tenés cosas bien armadas, pero hay huecos que el día equivocado se pagan caro.</p></div>
+    <div class="tier t-green"><h3>En control</h3><span class="pts mono">12–16 pts</span><p>Vas en serio. Acá no venimos a venderte miedo — venimos a compararnos.</p></div>
+  </div>
+
+  <footer>
+    WebCom Costa Rica · "Si no lo corremos nosotros, no te lo vendemos." · tokens: /tokens · esto consume el sistema visual real
+  </footer>
+
+</div>
+</body>
+</html>

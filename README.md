@@ -36,10 +36,12 @@ Fuente de verdad de la marca **WebCom Costa Rica (WCCR)**. Todo producto, web o 
 | Capa | Estado |
 |---|---|
 | Fundamento estratégico | ✅ Cerrado |
-| Identidad visual (paleta final, tipografía, SVG, iconos) | ⏳ Pendiente |
-| Plantillas y assets aplicados (web, membrete, presentaciones) | ⏳ Pendiente |
+| Activación (playbook, mensajería, Test) | ✅ Cerrado |
+| Sistema visual v1.0 "Sala de Control" (paleta, tipografía) | ✅ Cerrado |
+| SVG del logo, favicon/iconos, plantillas | ⏳ Pendiente |
+| Sitio web (consume estos tokens) | ⏳ Pendiente |
 
-> Los colores en `tokens/` son **v0.1 provisional** (extraídos del logo). Sirven de arranque; se reemplazan cuando se cierre la identidad visual.
+> **Vista en vivo del sistema visual:** abrí [`preview.html`](preview.html) en el navegador.
 
 ## Logos
 
