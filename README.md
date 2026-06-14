@@ -10,6 +10,7 @@ Fuente de verdad de la marca **WebCom Costa Rica (WCCR)**. Todo producto, web o 
 |---|---|
 | **[FUNDAMENTO-DE-MARCA.md](FUNDAMENTO-DE-MARCA.md)** | La estrategia: a quién, qué dolor, diferenciación, voz, historia. El **por qué**. |
 | **[BRAND_GUIDE.md](BRAND_GUIDE.md)** | Referencia rápida para devs e IAs: cómo aplicar la marca (voz, logos, colores, snippets). El **cómo**. |
+| **[docs/libro-de-marca.md](docs/libro-de-marca.md)** | El manual completo, capítulo por capítulo (logo, color, tipografía, aplicaciones). |
 | [docs/playbook-de-activacion.md](docs/playbook-de-activacion.md) | Cómo se activa la marca para atraer clientes (tácticas priorizadas). |
 | [docs/mensajeria.md](docs/mensajeria.md) | Textos del sitio web, listos para montar, en la voz de la marca. |
 | [docs/test-exposicion.md](docs/test-exposicion.md) | El "Test de Exposición Real": la pieza estrella de conversión. |
@@ -38,7 +39,8 @@ Fuente de verdad de la marca **WebCom Costa Rica (WCCR)**. Todo producto, web o 
 | Fundamento estratégico | ✅ Cerrado |
 | Activación (playbook, mensajería, Test) | ✅ Cerrado |
 | Sistema visual v1.0 "Sala de Control" (paleta, tipografía) | ✅ Cerrado |
-| SVG del logo, favicon/iconos, plantillas | ⏳ Pendiente |
+| Libro de marca completo (manual) | ✅ Cerrado |
+| SVG del logo, favicon/iconos, plantillas editables | ⏳ Pendiente (necesita diseñador) |
 | Sitio web (consume estos tokens) | ⏳ Pendiente |
 
 > **Vista en vivo del sistema visual:** abrí [`preview.html`](preview.html) en el navegador.
