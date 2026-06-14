@@ -14,6 +14,7 @@ Fuente de verdad de la marca **WebCom Costa Rica (WCCR)**. Todo producto, web o 
 | [docs/playbook-de-activacion.md](docs/playbook-de-activacion.md) | Cómo se activa la marca para atraer clientes (tácticas priorizadas). |
 | [docs/mensajeria.md](docs/mensajeria.md) | Textos del sitio web, listos para montar, en la voz de la marca. |
 | [docs/test-exposicion.md](docs/test-exposicion.md) | El "Test de Exposición Real": la pieza estrella de conversión. |
+| [docs/productos/boveda-propia.md](docs/productos/boveda-propia.md) | Ejemplo de producto con la marca aplicada (landing: [`boveda-propia.html`](boveda-propia.html)). |
 
 ## Estructura
 

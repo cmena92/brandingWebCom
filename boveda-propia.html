@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bóveda Propia — WebCom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --azul:#20217A; --rojo:#E30613; --azul-bright:#4D5BFF;
+    --bg:#0B0D1A; --surface:#14172E; --surface-2:#1E2240; --border:rgba(255,255,255,.08);
+    --text:#EAECF5; --muted:#9AA0BE; --faint:#5B6080;
+    --danger:#E30613; --warning:#FFB020; --ok:#2BD9A8;
+    --display:'Space Grotesk',sans-serif; --body:'Inter',sans-serif; --mono:'JetBrains Mono',monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--bg);color:var(--text);font-family:var(--body);line-height:1.6;
+    background-image:radial-gradient(circle at 1px 1px, rgba(255,255,255,.04) 1px, transparent 0);background-size:32px 32px}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3{font-family:var(--display);letter-spacing:-.01em}
+  .mono{font-family:var(--mono)}
+  /* nav */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--border)}
+  nav img{height:30px}
+  .btn{display:inline-block;font-weight:600;font-size:15px;border-radius:10px;padding:13px 22px;cursor:pointer;border:1px solid transparent}
+  .btn-primary{background:var(--azul-bright);color:#fff}
+  .btn-danger{background:var(--rojo);color:#fff}
+  .btn-ghost{border-color:var(--border);color:var(--text)}
+  /* hero */
+  .hero{padding:72px 0 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .kicker{font-family:var(--mono);color:var(--rojo);font-size:13px;letter-spacing:.08em;text-transform:uppercase}
+  .hero h1{font-size:46px;font-weight:700;line-height:1.08;margin:12px 0}
+  .hero p{color:var(--muted);font-size:19px;max-width:52ch}
+  .hero .cta{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
+  /* panel visual: expuesto -> propio */
+  .panel{background:linear-gradient(180deg,var(--surface),var(--surface-2));border:1px solid var(--border);border-radius:16px;padding:24px}
+  .panel .row{display:flex;align-items:center;justify-content:space-between;padding:13px 14px;border-radius:10px;background:#070912;margin-bottom:10px;font-family:var(--mono);font-size:13px}
+  .dot{width:9px;height:9px;border-radius:50%;display:inline-block;margin-right:8px}
+  .bad{color:var(--danger)} .good{color:var(--ok)}
+  .arrow{text-align:center;color:var(--faint);font-family:var(--mono);font-size:12px;margin:6px 0}
+  /* sections */
+  section{padding:54px 0;border-top:1px solid var(--border)}
+  .eyebrow{font-family:var(--mono);font-size:12px;color:var(--azul-bright);text-transform:uppercase;letter-spacing:.14em}
+  h2{font-size:30px;font-weight:600;margin:8px 0 22px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px}
+  .card .n{font-family:var(--mono);color:var(--azul-bright);font-size:13px}
+  .card h3{font-size:17px;margin:8px 0 6px}
+  .card p{color:var(--muted);font-size:14px}
+  .obj{border-left:3px solid var(--rojo);background:var(--surface);border-radius:0 10px 10px 0;padding:16px 18px;margin-bottom:12px}
+  .obj b{font-family:var(--display)} .obj span{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+  .final{text-align:center;background:linear-gradient(180deg,var(--surface),#070912);border:1px solid var(--border);border-radius:18px;padding:48px 24px;margin:24px 0}
+  .final h2{font-size:34px}
+  footer{padding:30px 0 60px;color:var(--faint);font-family:var(--mono);font-size:12px;text-align:center;border-top:1px solid var(--border)}
+  @media(max-width:760px){.hero{grid-template-columns:1fr}.hero h1{font-size:34px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <nav>
+    <img src="assets/logos/wccr-logo-blanco.png" alt="WebCom">
+    <a class="btn btn-ghost" href="#demo">Pedir demo</a>
+  </nav>
+
+  <section class="hero" style="border:0">
+    <div>
+      <span class="kicker">// Bóveda Propia</span>
+      <h1>Las contraseñas de tu empresa son tu mayor hueco.</h1>
+      <p>Con <b>Bóveda Propia</b> dejan de serlo — y son <b>tuyas</b>. Gestor self-hosted detrás de una red zero-trust. Tus llaves no viven en la nube de nadie.</p>
+      <div class="cta">
+        <a class="btn btn-danger" href="#demo">Mové tus contraseñas a tu propia casa →</a>
+        <a class="btn btn-ghost" href="#">¿Sabés dónde viven hoy?</a>
+      </div>
+    </div>
+    <div class="panel">
+      <div style="font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:12px">DÓNDE VIVEN TUS CONTRASEÑAS</div>
+      <div class="row"><span><span class="dot" style="background:var(--danger)"></span>Excel compartido</span><span class="bad">EXPUESTO</span></div>
+      <div class="row"><span><span class="dot" style="background:var(--danger)"></span>Chats / navegador</span><span class="bad">EXPUESTO</span></div>
+      <div class="row"><span><span class="dot" style="background:var(--warning)"></span>Nube de un tercero</span><span style="color:var(--warning)">CAJA NEGRA</span></div>
+      <div class="arrow">▼ Bóveda Propia ▼</div>
+      <div class="row"><span><span class="dot" style="background:var(--ok)"></span>Tu servidor · zero-trust</span><span class="good">BAJO CONTROL</span></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">El problema</span>
+    <h2>Tus llaves, regadas o en manos ajenas</h2>
+    <div class="grid">
+      <div class="card"><h3>Regadas</h3><p>Excel, chats, navegadores, la cabeza de la gente. Nadie tiene el control.</p></div>
+      <div class="card"><h3>Sin trazabilidad</h3><p>Cuando alguien se va, nadie sabe a qué tenía acceso.</p></div>
+      <div class="card"><h3>En la nube de otro</h3><p>Los gestores SaaS son otra caja negra — y de las que se hackean.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">Qué incluye · resultado, no horas</span>
+    <h2>Una bóveda tuya, funcionando y medida</h2>
+    <div class="grid">
+      <div class="card"><div class="n">01</div><h3>Servidor propio</h3><p>Vaultwarden endurecido y mantenido, en tu infraestructura.</p></div>
+      <div class="card"><div class="n">02</div><h3>Red zero-trust</h3><p>La bóveda no queda expuesta a internet abierto.</p></div>
+      <div class="card"><div class="n">03</div><h3>Extensión + app</h3><p>Cómodo en navegador, escritorio y móvil, para todo el equipo.</p></div>
+      <div class="card"><div class="n">04</div><h3>Capacitación</h3><p>Para que se use de verdad, no que quede instalado.</p></div>
+      <div class="card"><div class="n">05</div><h3>Respaldo + monitoreo</h3><p>Y un número claro de adopción.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <span class="eyebrow">"Sí, pero..."</span>
+    <h2>Sin humo</h2>
+    <div class="obj"><b>"¿Y si dejo de trabajar con WebCom?"</b><span>Es tuya. Tu servidor, tus datos. Cero secuestro.</span></div>
+    <div class="obj"><b>"¿Por qué no LastPass o 1Password?"</b><span>Porque tus llaves vivirían en su nube. Self-hosted = control y soberanía.</span></div>
+    <div class="obj"><b>"¿Y si se cae?"</b><span>Respaldo y monitoreo incluidos. Y si algo arde, lo conocemos: lo corremos nosotros.</span></div>
+  </section>
+
+  <div class="final" id="demo">
+    <h2>Mové tus contraseñas a tu propia casa.</h2>
+    <p style="color:var(--muted);max-width:46ch;margin:12px auto 22px">Te mostramos Bóveda Propia funcionando, con tu caso real sobre la mesa.</p>
+    <a class="btn btn-danger" href="#">Pedir una demo →</a>
+  </div>
+
+  <footer>
+    WebCom Costa Rica · Bóveda Propia · "Si no lo corremos nosotros, no te lo vendemos."
+  </footer>
+
+</div>
+</body>
+</html>
